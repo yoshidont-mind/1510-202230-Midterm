@@ -84,10 +84,9 @@ def is_valid_parity(codeword, parity):
     False
     """
 
-    list_of_codeword = list(codeword)
     number_of_ones = 0
 
-    for binary_digit in list_of_codeword:
+    for binary_digit in codeword:
         binary_digit_int = int(binary_digit)
         number_of_ones += binary_digit_int
 
