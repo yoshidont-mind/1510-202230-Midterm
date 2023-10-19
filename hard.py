@@ -46,3 +46,55 @@ Prove your function works in the docstring with these doctests:
 
 No main function is required.
 """
+
+
+def is_valid_parity(codeword, parity):
+    """
+    Determine whether codeword is parity-encoded correctly.
+
+    :param codeword: a non-empty string which consists only of binary digits (zeros and ones)
+    :param parity: a string which is either "EVEN" or "ODD"
+    :precondition: codeword must not be a non-empty string
+    :precondition: codeword must consist only of binary digits (zeros and ones)
+    :precondition: parity must be either "EVEN" or "ODD"
+    :postcondition: whether codeword is parity-encoded is correctly determined
+    :return: True or False of "codeword is parity-encoded"
+
+    >>> is_valid_parity("101", "EVEN")
+    True
+    >>> is_valid_parity("11", "EVEN")
+    True
+    >>> is_valid_parity("111111111100000000001010110101", "EVEN")
+    True
+    >>> is_valid_parity("10", "ODD")
+    True
+    >>> is_valid_parity("111", "ODD")
+    True
+    >>> is_valid_parity("1111111111000011111000001010110101", "ODD")
+    True
+    >>> is_valid_parity("111", "EVEN")
+    False
+    >>> is_valid_parity("11111111100000000001010110101", "EVEN")
+    False
+    >>> is_valid_parity("11", "ODD")
+    False
+    >>> is_valid_parity("101", "ODD")
+    False
+    >>> is_valid_parity("11111111111000011111000001010110101", "ODD")
+    False
+    """
+
+    list_of_codeword = list(codeword)
+    number_of_ones = 0
+
+    for binary_digit in list_of_codeword:
+        binary_digit_int = int(binary_digit)
+        number_of_ones += binary_digit_int
+
+    if number_of_ones % 2 == 0:
+        calculated_parity = "EVEN"
+    else:
+        calculated_parity = "ODD"
+
+    return calculated_parity == parity
+
