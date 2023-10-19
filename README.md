@@ -9,7 +9,7 @@ There are two questions. One is easy. One is hard. Each is worth 5 marks:
 </ol>
 
 ### Your name:
-Replace this line with your name
+Tatsuya Yoshida
 
 ### Your student number:
-Replace this line with your student number
+A01361712
